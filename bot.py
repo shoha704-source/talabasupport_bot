@@ -1,18 +1,17 @@
 import telebot
 
-TOKEN = "8028825414:AAHTWPs4dWZTSMImZq6n7yCdS_rBeq0Q324"
-bot = telebot.TeleBot(TOKEN)
+TOKEN = "8028825414:AAH2NQjCi9H7nJZcVyP6oEL6v76LMkRtbLU"
 
+bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=["start"])
 def start(message):
     bot.reply_to(
         message,
         "Assalomu alaykum! 🤖\n\n"
-        "Men sizning AI yordamchingizman.\n"
+        "Men Talaba Support botman.\n"
         "Savolingizni yozing."
     )
-
 
 @bot.message_handler(func=lambda message: True)
 def answer(message):
@@ -20,7 +19,6 @@ def answer(message):
         message,
         "Xabaringizni oldim: " + message.text
     )
-
 
 print("🤖 Bot ishga tushdi...")
 bot.infinity_polling()
